@@ -40,5 +40,9 @@ namespace TP_1
             formEj3.Show();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
