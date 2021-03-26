@@ -17,14 +17,28 @@ namespace TP_1
             InitializeComponent();
         }
 
-        private void btnEjercicio3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
+        private void btnEjercicio1_Click(object sender, EventArgs e)
+        {
+            var formEj1 = new FormEjercicio1();
+            formEj1.Show();
+        }
+
+        private void btnEjercicio2_Click(object sender, EventArgs e)
+        {
+            var formEj2 = new FormEjercicio2();
+            formEj2.Show();
+        }
+
+        private void btnEjercicio3_Click(object sender, EventArgs e)
+        {
+            var formEj3 = new FormEjercicio3();
+            formEj3.Show();
+        }
+
     }
 }

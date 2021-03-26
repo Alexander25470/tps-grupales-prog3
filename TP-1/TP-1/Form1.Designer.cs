@@ -43,6 +43,7 @@ namespace TP_1
             this.btnEjercicio1.TabIndex = 0;
             this.btnEjercicio1.Text = "Ejercicio 1";
             this.btnEjercicio1.UseVisualStyleBackColor = true;
+            this.btnEjercicio1.Click += new System.EventHandler(this.btnEjercicio1_Click);
             // 
             // btnEjercicio3
             // 
@@ -64,6 +65,7 @@ namespace TP_1
             this.btnEjercicio2.TabIndex = 2;
             this.btnEjercicio2.Text = "Ejercicio 2";
             this.btnEjercicio2.UseVisualStyleBackColor = true;
+            this.btnEjercicio2.Click += new System.EventHandler(this.btnEjercicio2_Click);
             // 
             // Form1
             // 
