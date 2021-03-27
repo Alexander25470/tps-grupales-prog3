@@ -24,7 +24,14 @@ namespace TP_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox_Izq.Items.Add(textBox1.Text);
+            if (textBox1.Text.Trim() != "")
+            {
+                listBox_Izq.Items.Add(textBox1.Text);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un nombre");
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
