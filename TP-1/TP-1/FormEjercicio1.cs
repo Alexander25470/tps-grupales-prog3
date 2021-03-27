@@ -16,5 +16,24 @@ namespace TP_1
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listBox_Der.Items.Add(listBox_Izq.SelectedItem.ToString());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox_Izq.Items.Add(textBox1.Text);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach(var item in listBox_Izq.Items)
+            {
+                listBox_Der.Items.Add(item);
+            }
+            
+        }
     }
 }
