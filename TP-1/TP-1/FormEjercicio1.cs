@@ -24,14 +24,30 @@ namespace TP_1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool repetido=true;
+            
+
             if (textBox1.Text.Trim() != "")
             {
-                listBox_Izq.Items.Add(textBox1.Text);
+
+                foreach (var item in listBox_Izq.Items)
+                {
+
+
+                    if (textBox1.Text.Equals(item.ToString())) { repetido = false; break; }
+
+                };
+
+                
+                if (repetido) { listBox_Izq.Items.Add(textBox1.Text); };
             }
             else
             {
                 MessageBox.Show("Ingrese un nombre");
             }
+
+           
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
