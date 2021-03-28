@@ -19,41 +19,55 @@ namespace TP_1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (listBox_Izq.Items.Count != 0)
+            try
             {
-                listBox_Der.Items.Add(listBox_Izq.SelectedItem.ToString());
-                listBox_Izq.Items.Remove(listBox_Izq.SelectedItem.ToString());
+                if (listBox_Izq.SelectedItems.IndexOf(listBox_Izq.SelectedItem) == -1)
+                {
+                    throw new Exception("No hay valores seleccionados");
+                }
+                listBox_Der.Items.Add(listBox_Izq.SelectedItem);
+                listBox_Izq.Items.Remove(listBox_Izq.SelectedItem);
+
             }
-            else
+            catch (Exception err)
             {
-                MessageBox.Show("La lista esta en blanco");
+                MessageBox.Show(err.Message);
+
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool repetido=true;
+            bool repetido=false;
             
-
-            if (textBox1.Text.Trim() != "")
+            if (textBox1.Text.Trim() == "")
             {
-
-                foreach (var item in listBox_Izq.Items)
-                {
-
-
-                    if (textBox1.Text.Equals(item.ToString())) { repetido = false; break; }
-
-                };
-
+                MessageBox.Show("Ingrese un nombre");
                 
-                if (repetido) { listBox_Izq.Items.Add(textBox1.Text); };
-
-                textBox1.Text ="";
             }
             else
             {
-                MessageBox.Show("Ingrese un nombre");
+                foreach (var item in listBox_Izq.Items)
+                {
+                    if (textBox1.Text.ToUpper().Equals(item.ToString().ToUpper())) {
+                        repetido = true;
+                        MessageBox.Show("Ese nombre ya se encuentra en la lista izquierda");
+                        break;
+                    }
+                };
+                foreach (var item in listBox_Der.Items)
+                {
+                    if (textBox1.Text.ToUpper().Equals(item.ToString().ToUpper()))
+                    {
+                        repetido = true;
+                        MessageBox.Show("Ese nombre ya se encuentra en la lista derecha");
+                        break;
+                    }
+                };
+
+                if (!repetido) { listBox_Izq.Items.Add(textBox1.Text); };
+
+                textBox1.Text ="";
             }
 
            
