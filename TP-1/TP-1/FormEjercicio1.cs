@@ -19,7 +19,15 @@ namespace TP_1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            listBox_Der.Items.Add(listBox_Izq.SelectedItem.ToString());
+            if (listBox_Izq.Items.Count != 0)
+            {
+                listBox_Der.Items.Add(listBox_Izq.SelectedItem.ToString());
+                listBox_Izq.Items.Remove(listBox_Izq.SelectedItem.ToString());
+            }
+            else
+            {
+                MessageBox.Show("La lista esta en blanco");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +48,8 @@ namespace TP_1
 
                 
                 if (repetido) { listBox_Izq.Items.Add(textBox1.Text); };
+
+                textBox1.Text ="";
             }
             else
             {
@@ -52,9 +62,17 @@ namespace TP_1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            foreach(var item in listBox_Izq.Items)
+            if (listBox_Izq.Items.Count != 0)
             {
-                listBox_Der.Items.Add(item);
+                foreach (var item in listBox_Izq.Items)
+                {
+                    listBox_Der.Items.Add(item);
+                }
+                listBox_Izq.Items.Clear();
+            }
+            else
+            {
+                MessageBox.Show("La lista esta en blanco");
             }
             
         }
