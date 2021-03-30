@@ -16,5 +16,33 @@ namespace TP_1
         {
             InitializeComponent();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            bool repetido = false;
+
+            if (btnAgregar.Text.Trim().Length == 0 || tbxApellido.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Por favor, ingresar un nombre o apellido");
+            }
+            else
+                foreach (var item in listbElementos.Items)
+                {
+                    if ($"{tbxNombre.Text.ToUpper()} {tbxApellido.Text.ToUpper()}" == item.ToString().ToUpper())
+                    {
+                        repetido = true;
+                        MessageBox.Show("Este Nombre ya se encuentra en la lista, ingresar otro");
+                        break;
+                    }
+                }
+
+            if (!repetido)
+            {
+                listbElementos.Items.Add($"{tbxNombre.Text} {tbxApellido.Text}");
+            }
+
+            tbxNombre.Text = "";
+            tbxApellido.Text = "";
+        }
     }
 }

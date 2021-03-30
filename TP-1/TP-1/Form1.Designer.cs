@@ -39,7 +39,7 @@ namespace TP_1
             // btnEjercicio1
             // 
             this.btnEjercicio1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEjercicio1.Location = new System.Drawing.Point(12, 54);
+            this.btnEjercicio1.Location = new System.Drawing.Point(37, 54);
             this.btnEjercicio1.Name = "btnEjercicio1";
             this.btnEjercicio1.Size = new System.Drawing.Size(178, 43);
             this.btnEjercicio1.TabIndex = 0;
@@ -50,7 +50,7 @@ namespace TP_1
             // btnEjercicio3
             // 
             this.btnEjercicio3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnEjercicio3.Location = new System.Drawing.Point(532, 54);
+            this.btnEjercicio3.Location = new System.Drawing.Point(500, 54);
             this.btnEjercicio3.Name = "btnEjercicio3";
             this.btnEjercicio3.Size = new System.Drawing.Size(178, 43);
             this.btnEjercicio3.TabIndex = 1;
@@ -73,9 +73,9 @@ namespace TP_1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 142);
+            this.label1.Location = new System.Drawing.Point(167, 155);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 31);
+            this.label1.Size = new System.Drawing.Size(119, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Integrantes:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -83,16 +83,16 @@ namespace TP_1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 170);
+            this.label2.Location = new System.Drawing.Point(245, 189);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(281, 140);
+            this.label2.Size = new System.Drawing.Size(227, 105);
             this.label2.TabIndex = 4;
             this.label2.Text = "Alejo Tomás Clifton Goldney\r\nAlexander Alberto Popp\r\nEmiliano del Pino\r\nNahuel Al" +
     "ejandro Godoy\r\nHector Salvador Coco\r\n";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 341);
             this.Controls.Add(this.label2);
