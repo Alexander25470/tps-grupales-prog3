@@ -44,5 +44,15 @@ namespace TP_1
             tbxNombre.Text = "";
             tbxApellido.Text = "";
         }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            listbElementos.Items.Remove(listbElementos.SelectedItem);
+        }
+
+        private void listbElementos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

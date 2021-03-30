@@ -70,8 +70,6 @@ namespace TP_1
                 textBox1.Text ="";
             }
 
-           
-           
         }
 
         private void button3_Click(object sender, EventArgs e)

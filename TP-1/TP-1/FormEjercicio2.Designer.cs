@@ -119,6 +119,7 @@ namespace TP_1
             this.listbElementos.Name = "listbElementos";
             this.listbElementos.Size = new System.Drawing.Size(361, 289);
             this.listbElementos.TabIndex = 7;
+            this.listbElementos.SelectedIndexChanged += new System.EventHandler(this.listbElementos_SelectedIndexChanged);
             // 
             // btnBorrar
             // 
@@ -128,6 +129,7 @@ namespace TP_1
             this.btnBorrar.TabIndex = 6;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // FormEjercicio2
             // 
