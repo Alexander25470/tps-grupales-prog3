@@ -19,30 +19,39 @@ namespace TP_1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            bool repetido = false;
+            bool repetido=false;  
+           
 
-            if (btnAgregar.Text.Trim().Length == 0 || tbxApellido.Text.Trim().Length == 0)
+            if (tbxNombre.Text.Trim().Length == 0 || tbxApellido.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Por favor, ingresar un nombre o apellido");
+                
             }
             else
-                foreach (var item in listbElementos.Items)
-                {
-                    if ($"{tbxNombre.Text.ToUpper()} {tbxApellido.Text.ToUpper()}" == item.ToString().ToUpper())
-                    {
-                        repetido = true;
-                        MessageBox.Show("Este Nombre ya se encuentra en la lista, ingresar otro");
-                        break;
-                    }
-                }
-
-            if (!repetido)
             {
-                listbElementos.Items.Add($"{tbxNombre.Text} {tbxApellido.Text}");
+                {
+                    foreach (var item in listbElementos.Items)
+                    {
+                        if ($"{tbxNombre.Text.ToUpper()} {tbxApellido.Text.ToUpper()}" == item.ToString().ToUpper())
+                        {
+                            repetido = true;
+                            MessageBox.Show("Este Nombre ya se encuentra en la lista, ingresar otro");
+                            break;
+                        }
+                    }
+
+
+
+                    if (!repetido)
+                    {
+                        listbElementos.Items.Add($"{tbxNombre.Text} {tbxApellido.Text}");
+                    }
+
+                    tbxNombre.Text = "";
+                    tbxApellido.Text = "";
+                }
             }
 
-            tbxNombre.Text = "";
-            tbxApellido.Text = "";
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -51,6 +60,16 @@ namespace TP_1
         }
 
         private void listbElementos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxNombre_TextChanged(object sender, EventArgs e)
         {
 
         }
