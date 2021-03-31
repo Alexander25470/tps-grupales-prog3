@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,9 +20,8 @@ namespace TP_1
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            bool repetido=false;  
-           
-
+            bool repetido=false;
+          
             if (tbxNombre.Text.Trim().Length == 0 || tbxApellido.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Por favor, ingresar un nombre o apellido");
@@ -46,6 +46,10 @@ namespace TP_1
                     {
                         listbElementos.Items.Add($"{tbxNombre.Text} {tbxApellido.Text}");
                     }
+
+                    listbElementos.Sorted = true;
+
+                   
 
                     tbxNombre.Text = "";
                     tbxApellido.Text = "";
