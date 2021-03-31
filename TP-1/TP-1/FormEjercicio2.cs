@@ -29,31 +29,31 @@ namespace TP_1
             }
             else
             {
+                
+                foreach (var item in listbElementos.Items)
                 {
-                    foreach (var item in listbElementos.Items)
+                    if ($"{tbxNombre.Text.ToUpper()} {tbxApellido.Text.ToUpper()}" == item.ToString().ToUpper())
                     {
-                        if ($"{tbxNombre.Text.ToUpper()} {tbxApellido.Text.ToUpper()}" == item.ToString().ToUpper())
-                        {
-                            repetido = true;
-                            MessageBox.Show("Este Nombre ya se encuentra en la lista, ingresar otro");
-                            break;
-                        }
+                        repetido = true;
+                        MessageBox.Show("Este Nombre ya se encuentra en la lista, ingresar otro");
+                        break;
                     }
+                }
 
 
 
-                    if (!repetido)
-                    {
-                        listbElementos.Items.Add($"{tbxNombre.Text} {tbxApellido.Text}");
-                    }
+                if (!repetido)
+                {
+                    listbElementos.Items.Add($"{tbxNombre.Text} {tbxApellido.Text}");
+                }
 
-                    listbElementos.Sorted = true;
+                listbElementos.Sorted = true;
 
                    
 
-                    tbxNombre.Text = "";
-                    tbxApellido.Text = "";
-                }
+                tbxNombre.Text = "";
+                tbxApellido.Text = "";
+                
             }
 
         }
