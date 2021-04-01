@@ -38,6 +38,7 @@ namespace TP_1
             this.rbtnMarried = new System.Windows.Forms.RadioButton();
             this.btnShowSelection = new System.Windows.Forms.Button();
             this.lblSelectedItems = new System.Windows.Forms.Label();
+            this.lblMostrarseleccion = new System.Windows.Forms.Label();
             this.gbxSex.SuspendLayout();
             this.gbxMaritalStatus.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +52,7 @@ namespace TP_1
             "Operador de PC",
             "Programador",
             "Tester"});
-            this.chklbOccupation.Location = new System.Drawing.Point(270, 205);
+            this.chklbOccupation.Location = new System.Drawing.Point(343, 143);
             this.chklbOccupation.Name = "chklbOccupation";
             this.chklbOccupation.Size = new System.Drawing.Size(136, 112);
             this.chklbOccupation.TabIndex = 0;
@@ -124,28 +125,38 @@ namespace TP_1
             // 
             // btnShowSelection
             // 
-            this.btnShowSelection.Location = new System.Drawing.Point(298, 323);
+            this.btnShowSelection.Location = new System.Drawing.Point(334, 273);
             this.btnShowSelection.Name = "btnShowSelection";
             this.btnShowSelection.Size = new System.Drawing.Size(163, 33);
             this.btnShowSelection.TabIndex = 3;
             this.btnShowSelection.Text = "Mostrar lo que selecciono";
             this.btnShowSelection.UseVisualStyleBackColor = true;
+            this.btnShowSelection.Click += new System.EventHandler(this.btnShowSelection_Click);
             // 
             // lblSelectedItems
             // 
             this.lblSelectedItems.AutoSize = true;
             this.lblSelectedItems.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblSelectedItems.Location = new System.Drawing.Point(158, 371);
+            this.lblSelectedItems.Location = new System.Drawing.Point(222, 325);
             this.lblSelectedItems.Name = "lblSelectedItems";
             this.lblSelectedItems.Size = new System.Drawing.Size(339, 21);
             this.lblSelectedItems.TabIndex = 4;
-            this.lblSelectedItems.Text = "Usted selecciono los isguientes elementos: ";
+            this.lblSelectedItems.Text = "Usted selecciono los siguientes elementos: ";
+            // 
+            // lblMostrarseleccion
+            // 
+            this.lblMostrarseleccion.AutoSize = true;
+            this.lblMostrarseleccion.Location = new System.Drawing.Point(222, 358);
+            this.lblMostrarseleccion.Name = "lblMostrarseleccion";
+            this.lblMostrarseleccion.Size = new System.Drawing.Size(0, 15);
+            this.lblMostrarseleccion.TabIndex = 5;
             // 
             // FormEjercicio3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblMostrarseleccion);
             this.Controls.Add(this.lblSelectedItems);
             this.Controls.Add(this.btnShowSelection);
             this.Controls.Add(this.gbxMaritalStatus);
@@ -173,5 +184,6 @@ namespace TP_1
         private System.Windows.Forms.RadioButton rbtnMarried;
         private System.Windows.Forms.Button btnShowSelection;
         private System.Windows.Forms.Label lblSelectedItems;
+        private System.Windows.Forms.Label lblMostrarseleccion;
     }
 }

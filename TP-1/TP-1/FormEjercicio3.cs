@@ -16,5 +16,20 @@ namespace TP_1
         {
             InitializeComponent();
         }
+
+        private void btnShowSelection_Click(object sender, EventArgs e)
+        {
+            string mostrar;
+
+            mostrar = "Sexo: " + (string)(rbtnMasc.Checked ? "Hombre" : "Mujer") + "\r\n";
+            mostrar += "Estado Civil: " + (string)(rbtnMarried.Checked ? "Casado" : "Soltero") + "\r\n";
+            
+            foreach(string item in chklbOccupation.CheckedItems)
+            {
+               mostrar += chklbOccupation.GetItemText(item) + "\r\n";
+            }
+
+            lblMostrarseleccion.Text = mostrar;
+        }
     }
 }
