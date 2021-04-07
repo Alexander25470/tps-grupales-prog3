@@ -13,5 +13,10 @@ namespace TP_2
         {
 
         }
+
+        protected void btnGenerar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
