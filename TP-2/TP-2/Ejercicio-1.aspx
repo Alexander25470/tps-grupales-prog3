@@ -21,6 +21,7 @@
         <p>
             <asp:Button ID="btnGenerar" runat="server" Height="29px" OnClick="btnGenerar_Click" Text="Generar Tabla" Width="134px" />
         </p>
+        <asp:Label ID="lblTabla" runat="server" Text=" "></asp:Label>
     </form>
 </body>
 </html>
