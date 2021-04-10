@@ -13,5 +13,11 @@ namespace TP_2
         {
 
         }
+
+        protected void btnVerResumen_Click(object sender, EventArgs e)
+        {
+            
+            Server.Transfer("Ejercicio-2b.aspx");
+        }
     }
 }
