@@ -21,7 +21,7 @@
         </p>
         <p>
             <asp:Label ID="lblClave" runat="server" Text="Clave:"></asp:Label>
-            <asp:TextBox ID="txtClave" runat="server" style="margin-left: 218px" Width="156px" OnTextChanged="txtClave_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="txtClave" runat="server" style="margin-left: 218px" Width="156px" OnTextChanged="txtClave_TextChanged" TextMode="Password"></asp:TextBox>
         </p>
         <asp:Button ID="btnAceptar" runat="server" style="margin-left: 295px; height: 26px;" Text="Aceptar" Width="92px" OnClick="btnAceptar_Click" />
     </form>
