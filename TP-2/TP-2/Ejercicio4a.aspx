@@ -17,13 +17,13 @@
             &nbsp;</p>
         <p>
             <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server" style="margin-left: 210px" Width="163px"></asp:TextBox>
+            <asp:TextBox ID="txtUsuario" runat="server" style="margin-left: 210px" Width="163px"></asp:TextBox>
         </p>
         <p>
             <asp:Label ID="lblClave" runat="server" Text="Clave:"></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server" style="margin-left: 218px" Width="156px"></asp:TextBox>
+            <asp:TextBox ID="txtClave" runat="server" style="margin-left: 218px" Width="156px" OnTextChanged="txtClave_TextChanged"></asp:TextBox>
         </p>
-        <asp:Button ID="btnAceptar" runat="server" style="margin-left: 295px" Text="Aceptar" Width="92px" />
+        <asp:Button ID="btnAceptar" runat="server" style="margin-left: 295px; height: 26px;" Text="Aceptar" Width="92px" OnClick="btnAceptar_Click" />
     </form>
 </body>
 </html>

@@ -13,5 +13,26 @@ namespace TP_2
         {
 
         }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            String usuario;
+            String clave;
+            usuario = txtUsuario.Text;
+            clave = txtClave.Text;
+            if(usuario == "claudio" && clave=="casas")
+            {
+                Server.Transfer("Ejercicio4b.aspx");
+            }
+            else
+            {
+                Server.Transfer("Ejercicio4c.aspx");
+            }
+        }
+
+        protected void txtClave_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
