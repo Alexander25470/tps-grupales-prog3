@@ -16,7 +16,7 @@
                 
                 <div class="col">
                     <asp:Label ID="Label2" runat="server" Text="Seleccione cantidad de memoria"></asp:Label>
-                    <asp:DropDownList ID="ddlMemoria" runat="server">
+                    <asp:DropDownList ID="ddlMemoria" runat="server" OnSelectedIndexChanged="ddlMemoria_SelectedIndexChanged">
                         <asp:ListItem Value="200">2 GB</asp:ListItem>
                         <asp:ListItem Value="375">4 GB</asp:ListItem>
                         <asp:ListItem Value="500">6 GB</asp:ListItem>
@@ -31,7 +31,7 @@
                     </asp:CheckBoxList>
                 </div>
                 <div>
-                    <asp:Button CssClass="btn btn-primary position-relative start-50 translate-middle-x" ID="Button1" runat="server" Text="Calcular precio" />
+                    <asp:Button CssClass="btn btn-primary position-relative start-50 translate-middle-x" ID="Button1" runat="server" Text="Calcular precio" OnClick="Button1_Click" />
                 </div>
             </div>
             

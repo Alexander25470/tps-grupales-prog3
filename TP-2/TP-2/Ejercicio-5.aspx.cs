@@ -13,5 +13,26 @@ namespace TP_2
         {
 
         }
+
+        protected void ddlMemoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int vMemoria= Convert.ToInt32(ddlMemoria.SelectedValue);
+            int vComponentes = 0;
+            int v;
+            foreach (ListItem s in cblComponentes.Items)
+            { 
+                if (s.Selected)
+                {
+                    vComponentes += Convert.ToInt32(cblComponentes.SelectedValue);
+                }
+            }
+            v = vMemoria + vComponentes;
+            lblPrecio.Text = v.ToString();
+        }
     }
 }
