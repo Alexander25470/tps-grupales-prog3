@@ -21,18 +21,19 @@ namespace TP_2
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            int vMemoria= Convert.ToInt32(ddlMemoria.SelectedValue);
-            int vComponentes = 0;
-            int v;
+            float vMemoria= float.Parse(ddlMemoria.SelectedValue);
+            float vComponentes = 0;
+            float v;
+
             foreach (ListItem s in cblComponentes.Items)
             { 
                 if (s.Selected)
                 {
-                    vComponentes += Convert.ToInt32(cblComponentes.SelectedValue);
+                    vComponentes += float.Parse(s.Value);
                 }
             }
-            v = vMemoria + vComponentes;
-            lblPrecio.Text = v.ToString();
+            v = vComponentes + vMemoria;
+            lblPrecio.Text = v.ToString()  + "$";
         }
     }
 }

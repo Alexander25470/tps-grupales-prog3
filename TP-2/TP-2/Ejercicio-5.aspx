@@ -17,17 +17,17 @@
                 <div class="col">
                     <asp:Label ID="Label2" runat="server" Text="Seleccione cantidad de memoria"></asp:Label>
                     <asp:DropDownList ID="ddlMemoria" runat="server" OnSelectedIndexChanged="ddlMemoria_SelectedIndexChanged">
-                        <asp:ListItem Value="200">2 GB</asp:ListItem>
-                        <asp:ListItem Value="375">4 GB</asp:ListItem>
-                        <asp:ListItem Value="500">6 GB</asp:ListItem>
+                        <asp:ListItem Value="200,00">2 GB</asp:ListItem>
+                        <asp:ListItem Value="375,00">4 GB</asp:ListItem>
+                        <asp:ListItem Value="500,00">6 GB</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="col">
                     <asp:Label ID="Label3" runat="server" Text="Seleccione accesorios"></asp:Label>
                     <asp:CheckBoxList ID="cblComponentes" runat="server">
-                        <asp:ListItem Value="2000.50">Monitor LCD</asp:ListItem>
-                        <asp:ListItem Value="550.50">HD 500GB</asp:ListItem>
-                        <asp:ListItem Value="1200">Grabador DVD</asp:ListItem>
+                        <asp:ListItem Value="2000,50">Monitor LCD</asp:ListItem>
+                        <asp:ListItem Value="550,50">HD 500GB</asp:ListItem>
+                        <asp:ListItem Value="1200,00">Grabador DVD</asp:ListItem>
                     </asp:CheckBoxList>
                 </div>
                 <div>
