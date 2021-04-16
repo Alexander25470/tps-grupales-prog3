@@ -14,38 +14,39 @@
         </div>
         <p>
             <asp:Label ID="Label1" runat="server" Text="Nombre de la localidad: "></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server" style="margin-left: 91px; margin-bottom: 0px" Width="148px"></asp:TextBox>
+            <asp:TextBox ID="tbxLocalidad" runat="server" style="margin-left: 91px; margin-bottom: 0px" Width="148px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="tbxLocalidad" ErrorMessage="Ingrese localidad"></asp:RequiredFieldValidator>
         </p>
         <p>
-            <asp:Button ID="btnGuardarLocalidad" runat="server" style="margin-left: 242px; margin-bottom: 0px" Text="Guardar Cambios" Width="132px" />
+            <asp:Button ID="btnGuardarLocalidad" runat="server" style="margin-left: 242px; margin-bottom: 0px" Text="Guardar Cambios" Width="132px" OnClick="btnGuardarLocalidad_Click" />
         </p>
         <p>
             <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="Usuarios"></asp:Label>
         </p>
         <p>
             <asp:Label ID="Label3" runat="server" Text="Nombre Usuario: "></asp:Label>
-            <asp:TextBox ID="txtNombreUsuario" runat="server" style="margin-left: 84px"></asp:TextBox>
+            <asp:TextBox ID="tbxNombreUsuario" runat="server" style="margin-left: 84px"></asp:TextBox>
         </p>
         <p>
             <asp:Label ID="Label4" runat="server" Text="Contraseña:"></asp:Label>
-            <asp:TextBox ID="txtContraseña" runat="server" style="margin-left: 120px"></asp:TextBox>
+            <asp:TextBox ID="tbxContraseña" runat="server" style="margin-left: 120px"></asp:TextBox>
         </p>
         <p>
             <asp:Label ID="Label5" runat="server" Text="Repetir Contraseña:"></asp:Label>
-            <asp:TextBox ID="txtRepetirContraseña" runat="server" style="margin-left: 74px"></asp:TextBox>
+            <asp:TextBox ID="tbxRepetirContraseña" runat="server" style="margin-left: 74px"></asp:TextBox>
         </p>
         <asp:Label ID="Label6" runat="server" Text="Correo Electronico:"></asp:Label>
         <asp:TextBox ID="txtCorreoElectronico" runat="server" style="margin-left: 74px"></asp:TextBox>
         <p>
             <asp:Label ID="Label7" runat="server" Text="CP:"></asp:Label>
-            <asp:TextBox ID="txtCp" runat="server" style="margin-left: 167px"></asp:TextBox>
+            <asp:TextBox ID="tbxCp" runat="server" style="margin-left: 167px"></asp:TextBox>
         </p>
         <asp:Label ID="Label8" runat="server" Text="Localidades:"></asp:Label>
         <asp:DropDownList ID="ddlLocalidades" runat="server" style="margin-left: 113px" Width="133px">
         </asp:DropDownList>
         <br />
         <br />
-        <asp:Button ID="btnGuardarUsuario" runat="server" style="margin-left: 185px" Text="Guardar Usuario" Width="148px" />
+        <asp:Button ID="btnGuardarUsuario" runat="server" style="margin-left: 185px" Text="Guardar Usuario" Width="148px" OnClick="btnGuardarUsuario_Click" />
         <br />
         <br />
         <asp:Button ID="btnInicio" runat="server" Text="Ir a inicio.aspx" Width="103px" />

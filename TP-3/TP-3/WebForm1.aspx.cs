@@ -13,5 +13,15 @@ namespace TP_3
         {
 
         }
+
+        protected void btnGuardarUsuario_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void btnGuardarLocalidad_Click(object sender, EventArgs e)
+        {
+            ddlLocalidades.Items.Add(tbxLocalidad.Text);
+        }
     }
 }
