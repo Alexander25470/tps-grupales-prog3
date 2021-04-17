@@ -16,12 +16,17 @@ namespace TP_3
 
         protected void btnGuardarUsuario_Click(object sender, EventArgs e)
         {
-            
+            lblBienvenido.Text = "Bienvenido Usuario " + tbxNombreUsuario.Text;
         }
 
         protected void btnGuardarLocalidad_Click(object sender, EventArgs e)
         {
             ddlLocalidades.Items.Add(tbxLocalidad.Text);
+        }
+
+        protected void btnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
         }
     }
 }

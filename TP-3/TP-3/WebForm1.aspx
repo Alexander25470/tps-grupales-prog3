@@ -37,7 +37,7 @@
             <asp:Label ID="Label5" runat="server" Text="Repetir Contraseña:"></asp:Label>
             <asp:TextBox ID="tbxRepetirContraseña" runat="server" style="margin-left: 74px"></asp:TextBox>
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="tbxContraseña" ControlToValidate="tbxRepetirContraseña" ErrorMessage="Las password no coinciden" ValidationGroup="grupo2"></asp:CompareValidator>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbxRepetirContraseña" ErrorMessage="Repita la contraseña" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tbxRepetirContraseña" ErrorMessage="Campo Vacío" ValidationGroup="grupo2"></asp:RequiredFieldValidator>
         </p>
         <asp:Label ID="Label6" runat="server" Text="Correo Electronico:"></asp:Label>
         <asp:TextBox ID="txtCorreoElectronico" runat="server" style="margin-left: 74px"></asp:TextBox>
@@ -53,9 +53,10 @@
         <br />
         <br />
         <asp:Button ID="btnGuardarUsuario" runat="server" style="margin-left: 185px" Text="Guardar Usuario" Width="148px" OnClick="btnGuardarUsuario_Click" ValidationGroup="grupo2" />
+        <asp:Label ID="lblBienvenido" runat="server"></asp:Label>
         <br />
         <br />
-        <asp:Button ID="btnInicio" runat="server" Text="Ir a inicio.aspx" Width="103px" />
+        <asp:Button ID="btnInicio" runat="server" Text="Ir a inicio.aspx" Width="103px" OnClick="btnInicio_Click" />
     </form>
 </body>
 </html>
