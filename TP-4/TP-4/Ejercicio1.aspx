@@ -8,9 +8,30 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            hola
-        </div>
+        <asp:Label ID="Label1" runat="server" Text="Destino Inicio"></asp:Label>
+        <p>
+        <asp:Label ID="lblProvinciaInicio" runat="server" Text="Provincia"></asp:Label>
+            <asp:DropDownList ID="ddlProvinciaInicio" runat="server" style="margin-left: 11px">
+            </asp:DropDownList>
+        </p>
+        <p>
+        <asp:Label ID="lblLocalidadInicio" runat="server" Text="Localidad"></asp:Label>
+            <asp:DropDownList ID="ddlLocalidadInicio" runat="server">
+            </asp:DropDownList>
+        </p>
+        <p>
+        <asp:Label ID="Label5" runat="server" Text="Destino Final"></asp:Label>
+        </p>
+        <p>
+        <asp:Label ID="lblProviciaFinal" runat="server" Text="Provincia"></asp:Label>
+            <asp:DropDownList ID="ddlProvinciaFinal" runat="server">
+            </asp:DropDownList>
+        </p>
+        <p>
+        <asp:Label ID="lblLocalidadFinal" runat="server" Text="Localidad"></asp:Label>
+            <asp:DropDownList ID="ddlLocalidadFinal" runat="server">
+            </asp:DropDownList>
+        </p>
     </form>
 </body>
 </html>
