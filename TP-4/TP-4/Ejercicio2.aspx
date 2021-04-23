@@ -12,9 +12,12 @@
         <div>
             Id Producto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="ddlProducto" runat="server" Font-Names="Arial" Height="28px" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" Width="91px">
-                <asp:ListItem>Igual a:</asp:ListItem>
-                <asp:ListItem>Mayor a:</asp:ListItem>
-                <asp:ListItem>Menor a:</asp:ListItem>
+                <asp:ListItem Value="=">Igual a:</asp:ListItem>
+
+                <asp:ListItem Value=">">Mayor a:</asp:ListItem>
+
+                <asp:ListItem Value="<">Menor a:</asp:ListItem>
+
             </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtProducto" runat="server"></asp:TextBox>
@@ -30,9 +33,9 @@
             <asp:TextBox ID="txtCategoria" runat="server"></asp:TextBox>
         </p>
         <div style="margin-left: 360px">
-            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" />
+            <asp:Button ID="btnFiltrar" runat="server" Text="Filtrar" OnClick="btnFiltrar_Click" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btonQuitarFiltro" runat="server" Text="Quitar Filtro" />
+            <asp:Button ID="btonQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btonQuitarFiltro_Click" />
             <br />
         </div>
         <asp:GridView ID="grdProductos" runat="server" Width="282px">
