@@ -11,7 +11,7 @@
         <asp:Label ID="Label1" runat="server" Text="Destino Inicio"></asp:Label>
         <p>
         <asp:Label ID="lblProvinciaInicio" runat="server" Text="Provincia"></asp:Label>
-            <asp:DropDownList ID="ddlProvinciaInicio" runat="server" style="margin-left: 11px">
+            <asp:DropDownList ID="ddlProvinciaInicio" runat="server" style="margin-left: 11px" AutoPostBack="True" OnSelectedIndexChanged="ddlProvinciaInicio_SelectedIndexChanged">
             </asp:DropDownList>
         </p>
         <p>
@@ -24,7 +24,7 @@
         </p>
         <p>
         <asp:Label ID="lblProviciaFinal" runat="server" Text="Provincia"></asp:Label>
-            <asp:DropDownList ID="ddlProvinciaFinal" runat="server">
+            <asp:DropDownList ID="ddlProvinciaFinal" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvinciaFinal_SelectedIndexChanged">
             </asp:DropDownList>
         </p>
         <p>
