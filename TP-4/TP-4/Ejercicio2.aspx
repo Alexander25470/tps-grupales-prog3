@@ -25,9 +25,11 @@
         <p>
             Id Categoria:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:DropDownList ID="ddlCategoria" runat="server" Height="28px" Width="91px">
-                <asp:ListItem>Igual a:</asp:ListItem>
-                <asp:ListItem>Mayor a:</asp:ListItem>
-                <asp:ListItem>Menor a:</asp:ListItem>
+                <asp:ListItem Value="=">Igual a:</asp:ListItem>
+
+                <asp:ListItem Value=">">Mayor a:</asp:ListItem>
+
+                <asp:ListItem Value="<">Menor a:</asp:ListItem>
             </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtCategoria" runat="server"></asp:TextBox>
