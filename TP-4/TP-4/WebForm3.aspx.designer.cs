@@ -11,7 +11,7 @@ namespace TP_4
 {
 
 
-    public partial class Ejercicio3b
+    public partial class WebForm3
     {
 
         /// <summary>

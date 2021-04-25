@@ -40,7 +40,7 @@
             <asp:Button ID="btonQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btonQuitarFiltro_Click" />
             <br />
         </div>
-        <asp:GridView ID="grdProductos" runat="server" Width="282px">
+        <asp:GridView ID="grdProductos" runat="server" Width="282px" OnSelectedIndexChanged="grdProductos_SelectedIndexChanged">
         </asp:GridView>
     </form>
 </body>
