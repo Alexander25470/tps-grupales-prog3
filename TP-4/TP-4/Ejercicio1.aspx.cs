@@ -122,7 +122,7 @@ namespace TP_4
             SqlDataReader dr4 = cmd4.ExecuteReader();
             while (dr4.Read())
             {
-                if (dr4["IdProvincia"].Equals(ddlProvinciaFinal.SelectedIndex + 1) == true)
+                if (dr4["IdProvincia"].Equals(ddlProvinciaFinal.SelectedIndex + 1) == true && ddlProvinciaInicio.SelectedIndex.Equals(ddlProvinciaFinal.SelectedIndex) == false)
                 {
                     ddlLocalidadFinal.Items.Add(dr4["NombreLocalidad"] + "");
                 }
