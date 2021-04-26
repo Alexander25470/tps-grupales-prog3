@@ -90,6 +90,8 @@ namespace TP_4
             ddlProvinciaFinal.DataValueField = "IdProvincia";
             ddlProvinciaFinal.DataBind();
             cnProvinciasFin.Close();
+
+            cargarLocalidadesFinal();
         }
 
         protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
