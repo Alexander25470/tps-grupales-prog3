@@ -27,7 +27,7 @@ namespace TP_4
                     ddlProvinciaInicio.Items.Add(dr["NombreProvincia"] + "");
                 }
                 cnViajes.Close();
-                
+
                 SqlConnection cnLocalidades = new SqlConnection(rutaViajes);
                 SqlCommand cmd1 = new SqlCommand(consulta2sql, cnLocalidades);
                 cnLocalidades.Open();
@@ -42,34 +42,19 @@ namespace TP_4
                 }
                 cnLocalidades.Close();
 
+                string testQuery = consultaSql + " where idProvincia != 1";
                 SqlConnection cnProvinciasFin = new SqlConnection(rutaViajes);
-                SqlCommand cmd3 = new SqlCommand(consultaSql, cnProvinciasFin);
+                SqlCommand cmd3 = new SqlCommand(testQuery, cnProvinciasFin);
                 cnProvinciasFin.Open();
                 SqlDataReader dr3 = cmd3.ExecuteReader();
-                while (dr3.Read())
-                {
-                    if (dr3["IdProvincia"].Equals(ddlProvinciaInicio.SelectedIndex + 1) == false)
-                    {
-                        ddlProvinciaFinal.Items.Add(dr3["NombreProvincia"] + "");
-                    }
-
-                }
+                ddlProvinciaFinal.DataSource = dr3;
+                ddlProvinciaFinal.DataTextField = "NombreProvincia";
+                ddlProvinciaFinal.DataValueField = "IdProvincia";
+                ddlProvinciaFinal.DataBind();
                 cnProvinciasFin.Close();
 
-                
-                SqlConnection cnLocalidadesFin = new SqlConnection(rutaViajes);
-                SqlCommand cmd4 = new SqlCommand(consulta2sql, cnLocalidadesFin);
-                cnLocalidadesFin.Open();
-                SqlDataReader dr4 = cmd4.ExecuteReader();
-                while (dr4.Read())
-                {
-                    if (dr4["IdProvincia"].Equals(ddlProvinciaFinal.SelectedIndex + 1) == true && ddlProvinciaInicio.SelectedIndex.Equals(ddlProvinciaFinal.SelectedIndex) == false)
-                    {
-                        ddlLocalidadFinal.Items.Add(dr4["NombreLocalidad"] + "");
-                    }
 
-                }
-                cnLocalidadesFin.Close();
+                cargarLocalidadesFinal();
             }
         }
 
@@ -79,7 +64,7 @@ namespace TP_4
             ddlProvinciaFinal.Items.Clear();
             string rutaViajes = "Data Source=localhost\\sqlexpress;Initial Catalog=Viajes;Integrated Security=True";
             string consulta2sql = "Select * from Localidades";
-            string consultaSql = "Select * from Provincias";
+
             SqlConnection cnLocalidades = new SqlConnection(rutaViajes);
             SqlCommand cmd1 = new SqlCommand(consulta2sql, cnLocalidades);
             cnLocalidades.Open();
@@ -94,40 +79,38 @@ namespace TP_4
             }
             cnLocalidades.Close();
 
+
+            string consultaSql = "Select * from Provincias where IdProvincia !=" + (ddlProvinciaInicio.SelectedIndex + 1);
             SqlConnection cnProvinciasFin = new SqlConnection(rutaViajes);
             SqlCommand cmd3 = new SqlCommand(consultaSql, cnProvinciasFin);
             cnProvinciasFin.Open();
             SqlDataReader dr3 = cmd3.ExecuteReader();
-            while (dr3.Read())
-            {
-                if (dr3["IdProvincia"].Equals(ddlProvinciaInicio.SelectedIndex + 1) == false)
-                {
-                    ddlProvinciaFinal.Items.Add(dr3["NombreProvincia"] + "");
-                }
-
-            }
+            ddlProvinciaFinal.DataSource = dr3;
+            ddlProvinciaFinal.DataTextField = "NombreProvincia";
+            ddlProvinciaFinal.DataValueField = "IdProvincia";
+            ddlProvinciaFinal.DataBind();
             cnProvinciasFin.Close();
         }
 
         protected void ddlProvinciaFinal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddlLocalidadFinal.Items.Clear();
 
+            cargarLocalidadesFinal();
+        }
+
+        protected void cargarLocalidadesFinal()
+        {
             string rutaViajes = "Data Source=localhost\\sqlexpress;Initial Catalog=Viajes;Integrated Security=True";
-            string consulta2sql = "Select * from Localidades";
+            string consulta2sql = "Select * from Localidades where IdProvincia = " + ddlProvinciaFinal.SelectedValue;
 
             SqlConnection cnLocalidadesFin = new SqlConnection(rutaViajes);
             SqlCommand cmd4 = new SqlCommand(consulta2sql, cnLocalidadesFin);
             cnLocalidadesFin.Open();
             SqlDataReader dr4 = cmd4.ExecuteReader();
-            while (dr4.Read())
-            {
-                if (dr4["IdProvincia"].Equals(ddlProvinciaFinal.SelectedIndex + 1) == true && ddlProvinciaInicio.SelectedIndex.Equals(ddlProvinciaFinal.SelectedIndex) == false)
-                {
-                    ddlLocalidadFinal.Items.Add(dr4["NombreLocalidad"] + "");
-                }
+            ddlLocalidadFinal.DataSource = dr4;
+            ddlLocalidadFinal.DataTextField = "NombreLocalidad";
+            ddlLocalidadFinal.DataBind();
 
-            }
             cnLocalidadesFin.Close();
         }
     }
