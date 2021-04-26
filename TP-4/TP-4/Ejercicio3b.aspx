@@ -16,7 +16,10 @@
             </asp:GridView>
             <br />
             <br />
-            Consultar Otro Tema</div>
+            <br />
+            <br />
+            <asp:LinkButton ID="lbConsultarOtroTema" runat="server" OnClick="lbVerLibros_Click1">Consultar Otro Tema</asp:LinkButton>
+        </div>
     </form>
 </body>
 </html>

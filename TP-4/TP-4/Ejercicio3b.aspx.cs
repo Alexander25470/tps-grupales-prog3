@@ -27,5 +27,10 @@ namespace TP_4
             }
             
         }
+
+        protected void lbVerLibros_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("Ejercicio3.aspx");
+        }
     }
 }
