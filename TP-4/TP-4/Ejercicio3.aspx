@@ -12,9 +12,9 @@
         <div>
             <asp:Label ID="lblSeleccionarTema" runat="server" Text="Seleccionar Tema:"></asp:Label>
             <asp:DropDownList ID="DropDownList1" runat="server" Height="16px" style="margin-left: 59px" Width="243px">
-                <asp:ListItem>Tema 1</asp:ListItem>
-                <asp:ListItem>Tema 2</asp:ListItem>
-                <asp:ListItem>Tema 3</asp:ListItem>
+                <asp:ListItem Value="1">Tema 1</asp:ListItem>
+                <asp:ListItem Value="2">Tema 2</asp:ListItem>
+                <asp:ListItem Value="3">Tema 3</asp:ListItem>
             </asp:DropDownList>
         </div>
         <p>

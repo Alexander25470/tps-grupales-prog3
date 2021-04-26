@@ -15,15 +15,19 @@ namespace TP_4
         {
             if (IsPostBack == false)
             {
+                string tema = Request.QueryString["tema"];
+                if (tema!=null) { 
                 SqlConnection cn = new SqlConnection("Data Source=localhost\\sqlexpress;Initial Catalog=Libreria;Integrated Security=True");
                 cn.Open();
-                SqlCommand cmd = new SqlCommand("Select * from Libros", cn);
+                SqlCommand cmd = new SqlCommand("Select * from Libros where idtema ="+tema, cn);
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 grdLibros.DataSource = dr;
                 grdLibros.DataBind();
 
                 cn.Close();
+                }
+                
             }
             
         }

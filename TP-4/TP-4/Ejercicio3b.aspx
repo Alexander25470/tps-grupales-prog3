@@ -14,10 +14,6 @@
             <br />
             <asp:GridView ID="grdLibros" runat="server">
             </asp:GridView>
-            <br />
-            <br />
-            <br />
-            <br />
             <asp:LinkButton ID="lbConsultarOtroTema" runat="server" OnClick="lbVerLibros_Click1">Consultar Otro Tema</asp:LinkButton>
         </div>
     </form>
