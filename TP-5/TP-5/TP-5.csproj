@@ -73,7 +73,7 @@
     <Content Include="ListarSucursales.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="Ejercicio-1.aspx.cs">
       <DependentUpon>Ejercicio-1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

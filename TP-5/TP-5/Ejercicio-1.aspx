@@ -80,7 +80,7 @@
                         <asp:Label ID="Label5" runat="server" Text="Provincia:"></asp:Label>
                     </td>
                     <td class="auto-style5">
-                        <asp:DropDownList ID="DropDownList1" runat="server" Height="24px" Width="283px">
+                        <asp:DropDownList ID="ddlProvincias" runat="server" Height="24px" Width="283px">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
