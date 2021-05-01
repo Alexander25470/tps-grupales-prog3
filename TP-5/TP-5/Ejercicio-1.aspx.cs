@@ -21,9 +21,19 @@ namespace TP_5
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            string agregarSucursal = "insert into sucursal(NombreSucursal, DescripcionSucursal, id_ProvinciaSucursal, DireccionSucursal) Values ('" + tbxNombreSucursal.Text + "','" + tbxDescripcion.Text + "','" + ddlProvincias.SelectedValue + "','" + tbxDireccion.Text+"')";
-            int cargo = conexion.ejecutarConsulta(agregarSucursal);
-            conexion.cargoBD(cargo, lblSucursalCargada);
+            string agregarSucursal = "insert into sucursal(NombreSucursal, DescripcionSucursal, id_ProvinciaSucursal, DireccionSucursal) Values ('" + tbxNombreSucursal.Text + "','" + tbxDescripcion.Text + "','" + ddlProvincias.SelectedValue + "','" + tbxDireccion.Text + "')";
+
+            if (tbxNombreSucursal.Text.Trim().Length == 0 || tbxDireccion.Text.Trim().Length == 0 || tbxDescripcion.Text.Trim().Length == 0)
+            {
+                lblSucursalCargada.Text = "No se aceptan campos vacios";
+            }
+            else
+            {
+                int cargo = conexion.ejecutarConsulta(agregarSucursal);
+                conexion.cargoBD(cargo, lblSucursalCargada);
+            }
+
+            
         }
     }
 }

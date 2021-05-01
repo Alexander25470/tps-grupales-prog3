@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace TP_5
 {
@@ -52,6 +53,26 @@ namespace TP_5
             }
             conn.Close();
             return 0;
+        }
+
+        public void mostrarGridView(GridView gd ,string consulta, string tabla)
+        {
+            
+                DataSet ds = new DataSet();
+                SqlConnection con = new SqlConnection(ruta);
+                con.Open();
+                SqlDataAdapter ad = new SqlDataAdapter(consulta, con);
+
+                ad.Fill(ds, tabla);
+
+                gd.DataSource = ds.Tables[tabla];
+                gd.DataBind();
+
+                con.Close();
+            
+
+
+
         }
 
     }
