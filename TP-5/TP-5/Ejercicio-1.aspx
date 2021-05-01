@@ -62,7 +62,7 @@
                         <asp:Label ID="Label3" runat="server" Text="Nombre Sucursal:"></asp:Label>
                     </td>
                     <td class="auto-style5">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="271px"></asp:TextBox>
+                        <asp:TextBox ID="tbxNombreSucursal" runat="server" Width="271px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -71,7 +71,7 @@
                         <asp:Label ID="Label4" runat="server" Text="Descripcion:"></asp:Label>
                     </td>
                     <td class="auto-style5">
-                        <asp:TextBox ID="TextBox2" runat="server" Height="52px" Width="269px"></asp:TextBox>
+                        <asp:TextBox ID="tbxDescripcion" runat="server" Height="52px" Width="269px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -90,7 +90,7 @@
                         <asp:Label ID="Label6" runat="server" Text="Direccion:"></asp:Label>
                     </td>
                     <td class="auto-style5">
-                        <asp:TextBox ID="TextBox3" runat="server" Width="275px"></asp:TextBox>
+                        <asp:TextBox ID="tbxDireccion" runat="server" Width="275px"></asp:TextBox>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -99,7 +99,9 @@
                     <td class="auto-style5">
                         <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" style="margin-left: 64px" Text="Aceptar" Width="90px" />
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        <asp:Label ID="lblSucursalCargada" runat="server"></asp:Label>
+                    </td>
                 </tr>
             </table>
         </div>

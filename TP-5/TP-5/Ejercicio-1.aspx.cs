@@ -15,14 +15,15 @@ namespace TP_5
         Conexion conexion = new Conexion();
         protected void Page_Load(object sender, EventArgs e)
         {
-
             string query = "select * from provincia";
             conexion.loadDdl(ddlProvincias, query, 1, 0);
-
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            string agregarSucursal = "insert into sucursal(NombreSucursal, DescripcionSucursal, id_ProvinciaSucursal, DireccionSucursal) Values ('" + tbxNombreSucursal.Text + "','" + tbxDescripcion.Text + "','" + ddlProvincias.SelectedValue + "','" + tbxDireccion.Text+"')";
+            int cargo = conexion.ejecutarConsulta(agregarSucursal);
+            conexion.cargoBD(cargo, lblSucursalCargada);
         }
     }
 }
