@@ -19,6 +19,17 @@
         .auto-style4 {
             margin-left: 36px;
         }
+        .auto-style5 {
+            width: 201px;
+            height: 30px;
+        }
+        .auto-style6 {
+            width: 228px;
+            height: 30px;
+        }
+        .auto-style7 {
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -44,14 +55,14 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style5">
                         <asp:Label ID="Label2" runat="server" Text="Ingrese ID Sucursal:"></asp:Label>
                     </td>
-                    <td class="auto-style3">
-                        <asp:TextBox ID="TextBox1" runat="server" Width="231px"></asp:TextBox>
+                    <td class="auto-style6">
+                        <asp:TextBox ID="tbxSucursal" runat="server" Width="231px"></asp:TextBox>
                     </td>
-                    <td>
-                        <asp:Button ID="btnEliminar" runat="server" CssClass="auto-style4" Text="Eliminar" />
+                    <td class="auto-style7">
+                        <asp:Button ID="btnEliminar" runat="server" CssClass="auto-style4" Text="Eliminar" OnClick="btnEliminar_Click" />
                     </td>
                 </tr>
                 <tr>

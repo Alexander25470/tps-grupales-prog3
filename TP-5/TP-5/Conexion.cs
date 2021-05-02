@@ -13,8 +13,6 @@ namespace TP_5
     {
         public const String ruta = "Data Source=localhost\\sqlexpress;Initial Catalog=BDsucursales;Integrated Security=True";
 
-
-
         public int ejecutarConsulta(String consulta)
         {
             SqlConnection conexion = new SqlConnection(ruta);
@@ -57,7 +55,6 @@ namespace TP_5
 
         public void mostrarGridView(GridView gd ,string consulta, string tabla)
         {
-            
                 DataSet ds = new DataSet();
                 SqlConnection con = new SqlConnection(ruta);
                 con.Open();
@@ -69,11 +66,6 @@ namespace TP_5
                 gd.DataBind();
 
                 con.Close();
-            
-
-
-
         }
-
     }
 }

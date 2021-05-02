@@ -13,5 +13,12 @@ namespace TP_5
         {
 
         }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Conexion con = new Conexion();
+            string query = "delete from sucursal where Id_Sucursal=" + tbxSucursal.Text;
+            con.ejecutarConsulta(query);
+        }
     }
 }
