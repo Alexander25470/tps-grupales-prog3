@@ -51,11 +51,11 @@
                         <asp:Label ID="Label2" runat="server" Text="Busqueda ingrese ID Sucursal:"></asp:Label>
                     </td>
                     <td class="auto-style3">
-                        <asp:TextBox ID="txtIdSucursal" runat="server" Width="235px"></asp:TextBox>
+                        <asp:TextBox ID="txtIdSucursal" runat="server" Width="235px" OnTextChanged="txtIdSucursal_TextChanged"></asp:TextBox>
                     </td>
                     <td>
                         <asp:Button ID="btnFiltrar" runat="server" CssClass="auto-style5" OnClick="btnFiltrar_Click" Text="Filtrar" Width="52px" />
-                        <asp:Button ID="btnMostrarTodo" runat="server" CssClass="auto-style4" Text="Mostrar todo" />
+                        <asp:Button ID="btnMostrarTodo" runat="server" CssClass="auto-style4" Text="Mostrar todo" OnClick="btnMostrarTodo_Click" />
                     </td>
                 </tr>
             </table>
