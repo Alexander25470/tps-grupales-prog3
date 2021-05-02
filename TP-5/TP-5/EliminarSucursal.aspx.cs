@@ -18,7 +18,12 @@ namespace TP_5
         {
             Conexion con = new Conexion();
             string query = "delete from sucursal where Id_Sucursal=" + tbxSucursal.Text;
-            con.ejecutarConsulta(query);
+            int elimino = con.ejecutarConsulta(query);
+            con.eliminoBD(elimino, lblSucursalEliminado);
+            if (elimino == 0)
+            {
+                tbxSucursal.Text = "";
+            }
         }
     }
 }

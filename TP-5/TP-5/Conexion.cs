@@ -38,6 +38,18 @@ namespace TP_5
             }            
         }
 
+        public void eliminoBD(int filas, Label lbl)
+        {
+            if (filas == 0)
+            {
+                lbl.Text = "No existe la sucursal.";
+            }
+            else
+            {
+                lbl.Text = "La sucursal se a eliminado con exito";
+            }
+        }
+
         public int loadDdl(DropDownList ddl,string query,int colValue, int colId)
         {
             SqlConnection conn = new SqlConnection(Conexion.ruta);

@@ -67,7 +67,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <asp:Label ID="lblSucursalEliminado" runat="server"></asp:Label>
+                        <asp:Label ID="lblSucursalEliminado" runat="server" ForeColor="Red"></asp:Label>
                     </td>
                     <td class="auto-style3">&nbsp;</td>
                     <td>&nbsp;</td>
