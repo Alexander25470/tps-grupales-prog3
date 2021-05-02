@@ -29,13 +29,6 @@ namespace TP_4
             
         }
 
-        protected void ddlProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-
-
-        }
-
         protected void btnFiltrar_Click(object sender, EventArgs e)
         {
             if (txtProducto.Text.Length != 0 || txtCategoria.Text.Length != 0)

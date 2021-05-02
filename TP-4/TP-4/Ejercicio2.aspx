@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div>
             Id Producto:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:DropDownList ID="ddlProducto" runat="server" Font-Names="Arial" Height="28px" OnSelectedIndexChanged="ddlProducto_SelectedIndexChanged" Width="91px">
+            <asp:DropDownList ID="ddlProducto" runat="server" Font-Names="Arial" Height="28px" Width="91px">
                 <asp:ListItem Value="=">Igual a:</asp:ListItem>
 
                 <asp:ListItem Value=">">Mayor a:</asp:ListItem>
@@ -40,7 +40,7 @@
             <asp:Button ID="btonQuitarFiltro" runat="server" Text="Quitar Filtro" OnClick="btonQuitarFiltro_Click" />
             <br />
         </div>
-        <asp:GridView ID="grdProductos" runat="server" Width="282px" OnSelectedIndexChanged="grdProductos_SelectedIndexChanged">
+        <asp:GridView ID="grdProductos" runat="server" Width="282px">
         </asp:GridView>
     </form>
 </body>
