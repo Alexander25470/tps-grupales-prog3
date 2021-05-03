@@ -18,11 +18,19 @@ namespace TP_5
         {
             Conexion con = new Conexion();
             string query = "delete from sucursal where Id_Sucursal=" + tbxSucursal.Text;
-            int elimino = con.ejecutarConsulta(query);
-            con.eliminoBD(elimino, lblSucursalEliminado);
-            if (elimino == 0)
+            if (tbxSucursal.Text.Trim().Length == 0)
             {
-                tbxSucursal.Text = "";
+                lblSucursalEliminado.Text = "No se aceptan campos vacios";
+            }
+            else
+            { 
+                int elimino = con.ejecutarConsulta(query);
+                con.eliminoBD(elimino, lblSucursalEliminado);
+
+                if (elimino == 0)
+                {
+                    tbxSucursal.Text = "";
+                }
             }
         }
     }
