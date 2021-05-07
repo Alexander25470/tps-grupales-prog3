@@ -11,7 +11,7 @@ namespace TP_6
 {
 
 
-    public partial class Inicio
+    public partial class Ejercicio1
     {
 
         /// <summary>
@@ -24,30 +24,21 @@ namespace TP_6
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblTitulo control.
+        /// lblProductos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitulo;
+        protected global::System.Web.UI.WebControls.Label lblProductos;
 
         /// <summary>
-        /// hlEjercicio1 control.
+        /// gvProductos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlEjercicio1;
-
-        /// <summary>
-        /// hlEjercicio2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlEjercicio2;
+        protected global::System.Web.UI.WebControls.GridView gvProductos;
     }
 }
