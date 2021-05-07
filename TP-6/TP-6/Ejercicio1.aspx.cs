@@ -16,7 +16,7 @@ namespace TP_6
                 Conexion con = new Conexion();
                 string query = "Select IdProducto, NombreProducto, CantidadPorUnidad, PrecioUnidad from Productos";
 
-                con.mostrarGridView(gvProductos, query, "Producto");
+                con.cargarGridView(gvProductos, query, "Producto");
             }
         }
     }

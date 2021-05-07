@@ -65,7 +65,7 @@ namespace TP_6
             return 0;
         }
 
-        public void mostrarGridView(GridView gd, string consulta, string tabla)
+        public void cargarGridView(GridView gd, string consulta, string tabla)
         {
             DataSet ds = new DataSet();
             SqlConnection con = new SqlConnection(ruta);
