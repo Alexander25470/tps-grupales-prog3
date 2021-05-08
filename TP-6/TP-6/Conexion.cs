@@ -79,5 +79,19 @@ namespace TP_6
 
             con.Close();
         }
+        public int EjecutarProcedimiento(SqlCommand Comando, String NombreSP) //comando que recibe tiene los parametros incluidos
+        {
+            int FilasCambiadas;
+            SqlConnection Conexion = new SqlConnection(ruta);
+            Conexion.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd = Comando;
+            cmd.Connection = Conexion;
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = NombreSP;
+            FilasCambiadas = cmd.ExecuteNonQuery();
+            Conexion.Close();
+            return FilasCambiadas;
+        }
     }
 }
