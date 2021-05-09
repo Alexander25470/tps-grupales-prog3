@@ -9,12 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="gvProductos" runat="server" AllowPaging="True" CellPadding="4" ForeColor="#333333" GridLines="None" OnPageIndexChanging="gvProductos_PageIndexChanging" PageSize="14" AutoGenerateSelectButton="True" OnSelectedIndexChanging="grdProducto_SelectedIndexChanging">
-                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <asp:GridView ID="gvProductos" runat="server" AllowPaging="True" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnPageIndexChanging="gvProductos_PageIndexChanging" OnSelectedIndexChanged="gvProductos_SelectedIndexChanged" OnSelectedIndexChanging="grdProducto_SelectedIndexChanging" PageSize="14">
                 <Columns>
                     <asp:TemplateField HeaderText="IdProducto">
                         <ItemTemplate>
-                            <asp:Label ID="lbl_idproducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
+                            <asp:Label ID="lbl_IdProducto" runat="server" Text='<%# Bind("IdProducto") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="NombreProducto">
@@ -24,7 +23,12 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="IdProveedor">
                         <ItemTemplate>
-                            <asp:Label ID="lbl_Proveedor" runat="server" Text='<%# Bind("IdProveedor") %>'></asp:Label>
+                            <asp:Label ID="lbl_IdProveedor" runat="server" Text='<%# Bind("IdProveedor") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="CantidadPorUnidad">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_CantidadPorUnidad" runat="server" Text='<%# Bind("CantidadPorUnidad") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="PrecioUnidad">
@@ -32,22 +36,11 @@
                             <asp:Label ID="lbl_PrecioUnidad" runat="server" Text='<%# Bind("PrecioUnidad") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField></asp:TemplateField>
                 </Columns>
-                <EditRowStyle BackColor="#999999" />
-                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
-                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
-                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
-                <SortedAscendingCellStyle BackColor="#E9E7E2" />
-                <SortedAscendingHeaderStyle BackColor="#506C8C" />
-                <SortedDescendingCellStyle BackColor="#FFFDF8" />
-                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
         </div>
         <p>
-            Producto Agregado: <asp:Label ID="lblAgregado" runat="server"></asp:Label>
+            Producto Agregado: <asp:Label ID="lbl_Agregado" runat="server"></asp:Label>
         </p>
     </form>
 </body>

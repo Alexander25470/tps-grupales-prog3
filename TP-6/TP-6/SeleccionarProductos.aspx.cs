@@ -42,6 +42,13 @@ namespace TP_6
             string s_IdProveedor = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_IdProveedor")).Text;
             string s_CantidadPorUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_CantidadPorUnidad")).Text;
             string s_PrecioUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_PrecioUnidad")).Text;
+
+            lbl_Agregado.Text += "<br/>" + s_NombreProducto;
+        }
+
+        protected void gvProductos_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
         }
     }
 }
