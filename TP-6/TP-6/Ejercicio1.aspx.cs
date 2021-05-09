@@ -77,5 +77,10 @@ namespace TP_6
 
             con.cargarGridView(gvProductos, query, "Producto");
         }
+
+        protected void gvProductos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
