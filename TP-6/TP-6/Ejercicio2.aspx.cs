@@ -13,5 +13,10 @@ namespace TP_6
         {
 
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session["Seleccionados"] = null;
+        }
     }
 }

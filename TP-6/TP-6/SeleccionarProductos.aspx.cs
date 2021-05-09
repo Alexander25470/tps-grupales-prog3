@@ -11,8 +11,7 @@ namespace TP_6
     public partial class WebForm2 : System.Web.UI.Page
     {
         Conexion con = new Conexion();
-
-        DataTable table = CrearTabla();
+       
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -40,19 +39,35 @@ namespace TP_6
 
         protected void grdProducto_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
+            bool repetido = false;
             string s_IdProducto = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_IdProducto")).Text;
-            string s_NombreProducto = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_NombreProducto")).Text;
-            string s_IdProveedor = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_IdProveedor")).Text;
-            string s_CantidadPorUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_CantidadPorUnidad")).Text;
-            string s_PrecioUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_PrecioUnidad")).Text;
+            if (Session["Seleccionados"] == null)
+            {
+                Session["Seleccionados"] = CrearTabla();
+            }
+            foreach (DataRow check in ((DataTable)Session["Seleccionados"]).Rows)
+            {
+                if (check["IdProducto"].ToString() == s_IdProducto)
+                {
+                    repetido = true;
+                    lbl_Repetido.Text = "Ya seleccionaste este producto";
+                }
+                
+            }
+            if (!repetido)
+            {
+                lbl_Repetido.Text= "";
+                string s_NombreProducto = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_NombreProducto")).Text;
+                string s_IdProveedor = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_IdProveedor")).Text;
+                string s_CantidadPorUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_CantidadPorUnidad")).Text;
+                string s_PrecioUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_PrecioUnidad")).Text;
+                lbl_Agregado.Text += "<br/>" + s_NombreProducto;
 
-            lbl_Agregado.Text += "<br/>" + s_NombreProducto;
-
-            String[] Producto = { s_IdProducto, s_NombreProducto, s_IdProveedor, s_CantidadPorUnidad, s_PrecioUnidad };
-
-            AgregarFila(table, Producto);
-
-            Session["Seleccionados"] = table;
+                String[] Producto = { s_IdProducto, s_NombreProducto, s_IdProveedor, s_CantidadPorUnidad, s_PrecioUnidad };
+                
+                AgregarFila((DataTable)Session["Seleccionados"], Producto);
+            }            
+                      
         }
    
         public static DataTable CrearTabla()
