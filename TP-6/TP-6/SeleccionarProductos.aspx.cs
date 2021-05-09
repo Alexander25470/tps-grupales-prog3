@@ -4,12 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace TP_6
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
         Conexion con = new Conexion();
+
+        DataTable table = CrearTabla();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,7 +24,6 @@ namespace TP_6
                 con.cargarGridView(gvProductos, query, "Producto");
             }
         }
-
         protected void gvProductos_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             string query = "Select IdProducto, NombreProducto, idProveedor, CantidadPorUnidad, PrecioUnidad from Productos";
@@ -44,11 +47,41 @@ namespace TP_6
             string s_PrecioUnidad = ((Label)gvProductos.Rows[e.NewSelectedIndex].FindControl("lbl_PrecioUnidad")).Text;
 
             lbl_Agregado.Text += "<br/>" + s_NombreProducto;
-        }
 
-        protected void gvProductos_SelectedIndexChanged1(object sender, EventArgs e)
+            String[] Producto = { s_IdProducto, s_NombreProducto, s_IdProveedor, s_CantidadPorUnidad, s_PrecioUnidad };
+
+            AgregarFila(table, Producto);
+
+            Session["Seleccionados"] = table;
+        }
+   
+        public static DataTable CrearTabla()
         {
+            DataTable dt = new DataTable();
+            DataColumn columna = new DataColumn("IdProducto", System.Type.GetType("System.String"));
+            dt.Columns.Add(columna);
+            columna = new DataColumn("NombreProducto", System.Type.GetType("System.String"));
+            dt.Columns.Add(columna);
+            columna = new DataColumn("IdProveedor", System.Type.GetType("System.String"));
+            dt.Columns.Add(columna);
+            columna = new DataColumn("CantidadPorUnidad", System.Type.GetType("System.String"));
+            dt.Columns.Add(columna);
+            columna = new DataColumn("PrecioUnidad", System.Type.GetType("System.String"));
+            dt.Columns.Add(columna);
 
+            return dt;
         }
+        public void AgregarFila(DataTable tabla, String[] Datos)
+        {
+            DataRow dr = tabla.NewRow();
+            dr["IdProducto"] = Datos[0];
+            dr["NombreProducto"] = Datos[1];
+            dr["IdProveedor"] = Datos[2];
+            dr["CantidadPorUnidad"] = Datos[3];
+            dr["PrecioUnidad"] = Datos[4];
+
+            tabla.Rows.Add(dr);
+        }
+
     }
 }
