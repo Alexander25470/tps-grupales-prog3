@@ -53,7 +53,7 @@ namespace TP_6
             Producto prod = new Producto();
             prod.NombreProducto = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_NombreProducto")).Text;
             prod.CantidadPorUnidad = ((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_CantidadPorUnidad")).Text;
-            prod.PrecioUnidad = Convert.ToDecimal(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioUnidad")).Text);
+            prod.PrecioUnidad = Convert.ToDouble(((TextBox)gvProductos.Rows[e.RowIndex].FindControl("txt_PrecioUnidad")).Text);
             prod.IdProducto = Convert.ToInt32(((Label)gvProductos.Rows[e.RowIndex].FindControl("lbl_idproducto")).Text);
             GestionProductos gProd = new GestionProductos();
             

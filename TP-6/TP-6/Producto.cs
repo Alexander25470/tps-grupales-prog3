@@ -10,13 +10,13 @@ namespace TP_6
         private int id_producto;
         private String Nombre_Producto;
         private String Cantidad_Por_Unidad;
-        private decimal Precio_Unidad;
+        private double Precio_Unidad;
 
         public Producto()
         {
         }
 
-        public Producto(int idproducto, String NombreProducto, String CantidadPorUnidad, decimal PrecioUnidad)
+        public Producto(int idproducto, String NombreProducto, String CantidadPorUnidad, double PrecioUnidad)
         {
             this.id_producto = idproducto;
             this.Nombre_Producto = NombreProducto;
@@ -39,7 +39,7 @@ namespace TP_6
             get { return Cantidad_Por_Unidad; }
             set { Cantidad_Por_Unidad = value; }
         }
-        public decimal PrecioUnidad
+        public double PrecioUnidad
         {
             get { return Precio_Unidad; }
             set { Precio_Unidad = value; }
