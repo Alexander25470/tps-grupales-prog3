@@ -88,6 +88,7 @@
     <Compile Include="ListarSucursalesSeleccionados.aspx.designer.cs">
       <DependentUpon>ListarSucursalesSeleccionados.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TablaSesion.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="libman.json" />

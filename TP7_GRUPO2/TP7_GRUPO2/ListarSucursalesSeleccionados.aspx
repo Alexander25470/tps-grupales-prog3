@@ -13,6 +13,8 @@
             Grupo 2: Hector S. Coco Alexander Popp Nahuel Godoy Emiliano Del Pino Alejo Clifton</div>
         <asp:HyperLink ID="hpListarSucursales" runat="server" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de Sucursales</asp:HyperLink>
         <asp:HyperLink ID="hpSucursalesSeleccionados" runat="server" NavigateUrl="~/ListarSucursalesSeleccionados.aspx">Mostrar Sucursales Seleccionadas</asp:HyperLink>
+        <asp:GridView ID="gvSucursalesSeleccionadas" runat="server">
+        </asp:GridView>
     </form>
 </body>
 </html>

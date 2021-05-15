@@ -42,7 +42,7 @@
                     URL_Imagen_Sucursal:
                     <asp:Label ID="URL_Imagen_SucursalLabel" runat="server" Text='<%# Eval("URL_Imagen_Sucursal") %>' />
                     <br />
-                    <asp:Button ID="btnSeleccion" runat="server" CommandName="eventButton" CssClass="auto-style2" style="margin-left: 93px" Text="Seleccionar" />
+                    <asp:Button ID="btnSeleccion" runat="server" CommandName="eventButton" CssClass="auto-style2" style="margin-left: 93px" Text="Seleccionar" CommandArgument='<%# Eval("ID_SUCURSAL")+","+Eval("NombreSucursal")+","+Eval("DescripcionSucursal") %>' OnCommand="btnSeleccionar_Command" />
                 </td>
             </AlternatingItemTemplate>
             <EditItemTemplate>
@@ -121,7 +121,7 @@
                     URL_Imagen_Sucursal:
                     <asp:Label ID="URL_Imagen_SucursalLabel" runat="server" Text='<%# Eval("URL_Imagen_Sucursal") %>' />
                     <br />
-                    <asp:Button ID="btnSeleccionar" runat="server" CommandArgument='<%# Eval("Id_Sucursal")+""+Eval("NombreSucursal")+""+Eval("DescripcionSucursal") %>' CommandName="eventButton" CssClass="auto-style1" Height="26px" OnCommand="btnSeleccionar_Command" style="margin-left: 92px" Text="Seleccionar" />
+                    <asp:Button ID="btnSeleccionar" runat="server" CommandArgument='<%# Eval("ID_SUCURSAL")+","+Eval("NombreSucursal")+","+Eval("DescripcionSucursal") %>' CommandName="eventButton" CssClass="auto-style1" Height="26px" OnCommand="btnSeleccionar_Command" style="margin-left: 92px" Text="Seleccionar" />
                 </td>
             </ItemTemplate>
             <LayoutTemplate>

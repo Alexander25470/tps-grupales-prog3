@@ -4,12 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace TP7_GRUPO2
 {
     public partial class SeleccionarSucursales : System.Web.UI.Page
     {
         Conexion con = new Conexion();
+        TablaSesion ts = new TablaSesion();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,16 +26,19 @@ namespace TP7_GRUPO2
         {
             if(e.CommandName == "eventButton")
             {
-                Session["Seleccion"] += e.CommandArgument.ToString();
+                if (Session["Seleccionados"] == null)
+                {
+                    Session["Seleccionados"] = TablaSesion.CrearTabla();
+                }
+                string[] cols = e.CommandArgument.ToString().Split(',');
+                TablaSesion.AgregarFila( (DataTable)Session["Seleccionados"] , cols);
+
             }
         }
 
         protected void btnSeleccion_Command(object sender, CommandEventArgs e)
         {
-            if (e.CommandName == "eventButton")
-            {
-                Session["Seleccion"] += e.CommandArgument.ToString();
-            }
+
         }
 
         protected void btnProvincias_Command(object sender, CommandEventArgs e)
