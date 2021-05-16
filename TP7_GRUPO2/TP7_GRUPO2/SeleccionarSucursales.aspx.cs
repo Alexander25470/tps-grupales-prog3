@@ -48,6 +48,21 @@ namespace TP7_GRUPO2
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
+            if (txtBuscarSucursal.Text == "")
+            {
+                SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]";
+            }
+            else
+            {
+                SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal] where [NombreSucursal] =('" + txtBuscarSucursal.Text + "')";
+                txtBuscarSucursal.Text = "";
+                
+            }
+            
+        }
+
+        protected void btnProvincias_Click(object sender, EventArgs e)
+        {
             
         }
     }

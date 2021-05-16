@@ -27,7 +27,7 @@
         <asp:Button ID="btnBuscar" runat="server" CssClass="auto-style2" OnClick="btnBuscar_Click" Text="Buscar" Width="75px" />
 &nbsp;<asp:DataList ID="dlProvincias" runat="server">
             <ItemTemplate>
-                <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("DescripcionProvincia") %>' Text='<%# Eval("DescripcionProvincia") %>' CommandName="cmdBoton" OnCommand="btnProvincias_Command" />
+                <asp:Button ID="btnProvincias" runat="server" CommandArgument='<%# Eval("DescripcionProvincia") %>' Text='<%# Eval("DescripcionProvincia") %>' CommandName="cmdBoton" OnCommand="btnProvincias_Command" OnClick="btnProvincias_Click" />
             </ItemTemplate>
         </asp:DataList>
         <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSource1" GroupItemCount="3" style="margin-bottom: 0px">
