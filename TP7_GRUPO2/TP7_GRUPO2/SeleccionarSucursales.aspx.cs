@@ -36,34 +36,28 @@ namespace TP7_GRUPO2
             }
         }
 
-        protected void btnSeleccion_Command(object sender, CommandEventArgs e)
-        {
-
-        }
-
-        protected void btnProvincias_Command(object sender, CommandEventArgs e)
-        {
-
-        }
-
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtBuscarSucursal.Text == "")
+            if (txtBuscarSucursal.Text.Length == 0)
             {
                 SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]";
             }
             else
             {
                 SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal] where [NombreSucursal] =('" + txtBuscarSucursal.Text + "')";
-                txtBuscarSucursal.Text = "";
-                
+                txtBuscarSucursal.Text = null;
             }
             
         }
 
-        protected void btnProvincias_Click(object sender, EventArgs e)
+        protected void btnProvincias_Command(object sender, CommandEventArgs e)
         {
-            
+            if (e.CommandName == "cmdBoton")
+            {
+                
+                SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal] inner join Provincia on Id_Provincia=Id_ProvinciaSucursal where [descripcionProvincia] =('" + e.CommandArgument.ToString() + "')";
+           
+            }
         }
     }
 }
