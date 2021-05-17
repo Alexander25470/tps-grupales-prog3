@@ -38,16 +38,16 @@ namespace TP7_GRUPO2
 
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (txtBuscarSucursal.Text.Length == 0)
+            if (txtBuscarSucursal.Text == "")
             {
-                SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal]";
+                SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal] where 1=1";
             }
             else
             {
-                SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal] where [NombreSucursal] =('" + txtBuscarSucursal.Text + "')";
+                SqlDataSource1.SelectCommand = "SELECT [Id_Sucursal], [NombreSucursal], [DescripcionSucursal], [Id_HorarioSucursal], [Id_ProvinciaSucursal], [DireccionSucursal], [URL_Imagen_Sucursal] FROM [Sucursal] where [NombreSucursal] LIKE ('%" + txtBuscarSucursal.Text + "%')";
                 txtBuscarSucursal.Text = null;
             }
-            
+
         }
 
         protected void btnProvincias_Command(object sender, CommandEventArgs e)
