@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Sucursales
+    public class Sucursal
     {
         private string _nombreSucursal;
         private string _descripcion;
         private int _IdProvincia;
         private string _direccion;
 
-        public Sucursales()
+        public Sucursal()
         {
         }
 
