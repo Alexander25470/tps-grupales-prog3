@@ -54,10 +54,10 @@ namespace Dao
         public DataTable ObtenerTabla(string consulta, string tabla, SqlConnection con)
         {
             DataSet ds = new DataSet();
-            SqlDataAdapter adapt = ObtenerAdaptador(tabla, con);
-            adapt.Fill(ds, consulta);
+            SqlDataAdapter adapt = ObtenerAdaptador(consulta, con);
+            adapt.Fill(ds, tabla);
             con.Close();
-            return ds.Tables[consulta];
+            return ds.Tables[tabla];
         }
 
         public Boolean existe(String consulta)
