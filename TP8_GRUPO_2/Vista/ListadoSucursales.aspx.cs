@@ -17,6 +17,7 @@ namespace Vista
 
                 if (!IsPostBack)
                 { 
+                
                 gdSucursales.DataSource = neg.ObtenerTablaSucursales();
                 gdSucursales.DataBind();
                 }

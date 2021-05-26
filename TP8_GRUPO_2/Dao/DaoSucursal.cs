@@ -22,9 +22,10 @@ namespace Dao
         }
 
 
-        public DataTable ObtenerTabla(string tabla, string sql)
+        public DataTable ObtenerTabla(string consulta, string tabla)
         {
-            return ds.ObtenerTabla(tabla, sql);
+            SqlConnection conexion = ds.ObtenerConexion();
+            return ds.ObtenerTabla(consulta,tabla,conexion);
         }
 
 

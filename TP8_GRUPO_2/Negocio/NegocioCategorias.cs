@@ -28,7 +28,7 @@ namespace Negocio
         {
             string query = "Select S.Id_Sucursal, S.NombreSucursal, S.DescripcionSucursal, P.DescripcionProvincia as Provincia, S.DireccionSucursal from Sucursal as S inner join Provincia as P on P.Id_Provincia = S.Id_ProvinciaSucursal";
 
-            return dao.ObtenerTabla(query, "Sucursal");
+            return dao.ObtenerTabla(query,"Sucursal");
         }
 
         public void EliminarSucursal() { }

@@ -37,12 +37,12 @@ namespace Dao
             return filas;
         }
 
-        private SqlDataAdapter ObtenerAdaptador(string query, SqlConnection cn)
+        private SqlDataAdapter ObtenerAdaptador(string consulta, SqlConnection cn)
         {
             SqlDataAdapter adaptador;
             try
             {
-                adaptador = new SqlDataAdapter(query, cn);
+                adaptador = new SqlDataAdapter(consulta, cn);
                 return adaptador;
             }
             catch(Exception ex)
@@ -51,14 +51,13 @@ namespace Dao
             }
         }
 
-        public DataTable ObtenerTabla(string tabla, string sql)
+        public DataTable ObtenerTabla(string consulta, string tabla, SqlConnection con)
         {
             DataSet ds = new DataSet();
-            SqlConnection conexion = ObtenerConexion();
-            SqlDataAdapter adapt = ObtenerAdaptador(sql, conexion);
-            adapt.Fill(ds, tabla);
-            conexion.Close();
-            return ds.Tables[tabla];
+            SqlDataAdapter adapt = ObtenerAdaptador(tabla, con);
+            adapt.Fill(ds, consulta);
+            con.Close();
+            return ds.Tables[consulta];
         }
 
         public Boolean existe(String consulta)
