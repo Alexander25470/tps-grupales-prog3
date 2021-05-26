@@ -41,6 +41,11 @@
                 </tr>
             </table>
         <div>
+            <asp:Label ID="Label2" runat="server" Text="Ingrese ID Sucursal:"></asp:Label>
+            <asp:TextBox ID="tbxSucursal" runat="server" Width="231px"></asp:TextBox>
+            <asp:Button ID="btnEliminar" runat="server" CssClass="auto-style4" OnClick="btnEliminar_Click" Text="Eliminar" />
+            <br />
+            <asp:Label ID="lblSucursalEliminado" runat="server" ForeColor="Red"></asp:Label>
         </div>
     </form>
 </body>

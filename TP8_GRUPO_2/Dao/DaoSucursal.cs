@@ -7,6 +7,7 @@ using Entidades;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace Dao
 {
     public class DaoSucursal
@@ -19,5 +20,14 @@ namespace Dao
             SqlConnection conexion = ds.ObtenerConexion();
             ds.ejecutarConsulta(agregarSucursal, conexion);
         }
+
+
+        public DataTable ObtenerTabla(string tabla, string sql)
+        {
+            return ds.ObtenerTabla(tabla, sql);
+        }
+
+
+
     }
 }

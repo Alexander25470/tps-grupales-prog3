@@ -42,6 +42,10 @@
                 </tr>
             </table>
         </div>
+        <p>
+            <asp:GridView ID="gdSucursales" runat="server" OnSelectedIndexChanged="gdSucursales_SelectedIndexChanged">
+            </asp:GridView>
+        </p>
     </form>
 </body>
 </html>
