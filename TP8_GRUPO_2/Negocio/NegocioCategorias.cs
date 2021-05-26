@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Entidades;
 using Dao;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Negocio
 {
@@ -20,7 +21,11 @@ namespace Negocio
 
         }
 
-     
+        public DataTable ObtenerTablaProvincias()
+        {
+            DataTable ds = dao.ObtenerTabla("Select * from Provincia", "Provincia");
+            return ds;
+        }
 
 
 

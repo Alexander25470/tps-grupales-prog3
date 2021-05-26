@@ -17,7 +17,10 @@ namespace Vista
         
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+                ddl_Provincias.DataSource = neg.ObtenerTablaProvincias();
+                ddl_Provincias.DataTextField = "DescripcionProvincia";
+                ddl_Provincias.DataBind();
+            
         }
 
         protected void btn_Aceptar_Click(object sender, EventArgs e)
