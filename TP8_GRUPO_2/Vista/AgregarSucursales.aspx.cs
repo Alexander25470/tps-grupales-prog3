@@ -19,6 +19,7 @@ namespace Vista
         {
                 ddl_Provincias.DataSource = neg.ObtenerTablaProvincias();
                 ddl_Provincias.DataTextField = "DescripcionProvincia";
+                ddl_Provincias.DataValueField = "Id_Provincia";
                 ddl_Provincias.DataBind();
             
         }
@@ -36,8 +37,8 @@ namespace Vista
                 suc.NombreSucursal = txt_NombreSucursal.Text;
                 suc.DescripcionSucursal = txt_Descripcion.Text;
                 suc.DireccionSucursal = txt_Direccion.Text;
-                //suc.Id_ProvinciaSucursal = ddl_Provincias.SelectedValue;
-                suc.Id_ProvinciaSucursal = "1";
+                suc.Id_ProvinciaSucursal = ddl_Provincias.SelectedValue;
+                
 
                 neg.GuardarSucursal(suc);
                 
