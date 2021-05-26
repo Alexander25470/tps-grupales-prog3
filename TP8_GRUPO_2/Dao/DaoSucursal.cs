@@ -28,6 +28,12 @@ namespace Dao
             return ds.ObtenerTabla(consulta,tabla,conexion);
         }
 
+        public void eliminarSucursal(string idSucursal)
+        {
+            SqlConnection conexion = ds.ObtenerConexion();
+            string query = "delete from sucursal where Id_Sucursal=" + idSucursal;
+            ds.ejecutarConsulta(query, conexion);
+        }
 
 
     }

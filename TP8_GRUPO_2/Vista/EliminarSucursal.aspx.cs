@@ -18,7 +18,15 @@ namespace Vista
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            if (tbxSucursal.Text.Trim().Length == 0)
+            {
+                lblSucursalEliminado.Text = "Ingrese id de sucursal";
+            }
+            else
+            {
+                neg.EliminarSucursal(tbxSucursal.Text);
+                lblSucursalEliminado.Text = "";
+            }
 
         }
     }

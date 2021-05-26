@@ -33,7 +33,8 @@ namespace Vista
                 suc.NombreSucursal = txt_NombreSucursal.Text;
                 suc.DescripcionSucursal = txt_Descripcion.Text;
                 suc.DireccionSucursal = txt_Direccion.Text;
-                suc.Id_ProvinciaSucursal = ddl_Provincias.SelectedValue;
+                //suc.Id_ProvinciaSucursal = ddl_Provincias.SelectedValue;
+                suc.Id_ProvinciaSucursal = "1";
 
                 neg.GuardarSucursal(suc);
                 

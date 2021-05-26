@@ -31,7 +31,10 @@ namespace Negocio
             return dao.ObtenerTabla(query,"Sucursal");
         }
 
-        public void EliminarSucursal() { }
+        public void EliminarSucursal(string idSucursal)
+        {
+            dao.eliminarSucursal(idSucursal);
+        }
     }
 
     
