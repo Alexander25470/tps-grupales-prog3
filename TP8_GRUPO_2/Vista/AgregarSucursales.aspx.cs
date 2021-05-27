@@ -17,10 +17,13 @@ namespace Vista
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
                 ddl_Provincias.DataSource = neg.ObtenerTablaProvincias();
                 ddl_Provincias.DataTextField = "DescripcionProvincia";
                 ddl_Provincias.DataValueField = "Id_Provincia";
                 ddl_Provincias.DataBind();
+            }
         }
 
         protected void btn_Aceptar_Click(object sender, EventArgs e)
@@ -36,7 +39,7 @@ namespace Vista
                 suc.NombreSucursal = txt_NombreSucursal.Text;
                 suc.DescripcionSucursal = txt_Descripcion.Text;
                 suc.DireccionSucursal = txt_Direccion.Text;
-                suc.Id_ProvinciaSucursal = ddl_Provincias.Text;
+                suc.Id_ProvinciaSucursal = ddl_Provincias.SelectedValue;
                 
 
                 neg.GuardarSucursal(suc);
