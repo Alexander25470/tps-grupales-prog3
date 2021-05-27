@@ -25,7 +25,7 @@ namespace Vista
             else
             {
                 neg.EliminarSucursal(tbxSucursal.Text);
-                lblSucursalEliminado.Text = "";
+                lblSucursalEliminado.Text = "Sucursal eliminada";
             }
 
         }

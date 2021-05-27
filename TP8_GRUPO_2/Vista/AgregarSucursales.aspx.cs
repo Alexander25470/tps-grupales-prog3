@@ -21,7 +21,6 @@ namespace Vista
                 ddl_Provincias.DataTextField = "DescripcionProvincia";
                 ddl_Provincias.DataValueField = "Id_Provincia";
                 ddl_Provincias.DataBind();
-            
         }
 
         protected void btn_Aceptar_Click(object sender, EventArgs e)
@@ -37,7 +36,7 @@ namespace Vista
                 suc.NombreSucursal = txt_NombreSucursal.Text;
                 suc.DescripcionSucursal = txt_Descripcion.Text;
                 suc.DireccionSucursal = txt_Direccion.Text;
-                suc.Id_ProvinciaSucursal = ddl_Provincias.SelectedValue;
+                suc.Id_ProvinciaSucursal = ddl_Provincias.Text;
                 
 
                 neg.GuardarSucursal(suc);
@@ -46,9 +45,5 @@ namespace Vista
             }
         }
 
-        protected void ddl_Provincias_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

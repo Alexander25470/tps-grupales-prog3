@@ -38,7 +38,7 @@ namespace Negocio
 
         public void EliminarSucursal(string idSucursal)
         {
-            dao.eliminarSucursal(idSucursal);
+            dao.eliminarSucursal(idSucursal);            
         }
     }
 
