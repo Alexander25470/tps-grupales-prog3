@@ -16,8 +16,8 @@ namespace Negocio
         
         public void GuardarSucursal(Sucursal suc)
         {
-           
 
+            dao.agregarSucursal(suc);
 
         }
 
